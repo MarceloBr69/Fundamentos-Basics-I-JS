@@ -107,6 +107,7 @@ function Y(){
 }
 Y();
 console.log("La cantidad de numeros que es mayor de 3, dentro del array son: " + sumatoria);
+console.log("Hasta aqui es el ejercicio anterior")
 
 
 
@@ -114,14 +115,83 @@ console.log("La cantidad de numeros que es mayor de 3, dentro del array son: " +
 
 //Cuadrados: Dado un array con múltiples valores, escribe una función que reemplace cada valor por el cuadrado del mismo valor (ej: [1,5,10,-2] será [1,25,100,4]).
 
-let cuadrados = [1,5,10,-2];
-let multi = 0
-function EjercicioCuadrados(){
-    for(let i = 0; i<cuadrados.length; i++){
-        multi= cuadrados[i] * cuadrados[i];
-        cuadrados[i].pop;
-        cuadrados[i].push(multi);  
+
+
+
+
+//function EcuacionCuadratica(ArrayAlCuadrado){
+    //for(let i = 0; i<ArrayAlCuadrado.length; i++){
+      //  calculo = ArrayAlCuadrado[i] * 2
+        //ArrayAlCuadrado.push(calculo);
+   // }
+//}
+//console.log(EcuacionCuadratica([1,5,10,-2]));
+
+
+
+//Negativos: Dado un array con múltiples valores, escribe una función que reemplace cualquier número negativo dentro del array por 0. Cuando el programa esté listo, el array no debiera contener números negativos (ej: [1,5,10,-2] se convertirá en [1,5,10,0]).
+
+arrayNumeros = [1,5,10,-2];
+function NumerosNegativosACero(){
+    for(i = 0; i<arrayNumeros.length; i++){
+        if(arrayNumeros[i] < 0){
+            arrayNumeros.pop();
+            arrayNumeros.push(0);
+        }
+        
     }
 }
-EjercicioCuadrados();
-console.log(cuadrados);
+NumerosNegativosACero();
+console.log(arrayNumeros);
+console.log("Hasta aqui es el ejercicio anterior")
+
+//Max/Min/Avg: Dado un array con múltiples valores, escribe una función que devuelva un nuevo array que solo contenga el valor mayor (max), menor (min) y promedio (avg) del array original (ej: [1,5,10,-2] devolverá [10,-2,3.5]).
+
+let Original = [1,5,10,-2];
+let sumAVG = 0
+let ResultadoMaxMinAVG= [];
+let max1 = [];
+let min1 = [];
+
+
+function MaxMinAVG(){
+    for(let i = 0; i<Original.length; i++){
+        sumAVG = Original[i]+ sumAVG;
+        if(i==3){
+            max1 = Math.max(...Original);
+            min1 = Math.min(...Original);
+           
+            let divMaxMinAVG = sumAVG/Original.length;
+
+            ResultadoMaxMinAVG.push(max1, min1, divMaxMinAVG);
+            console.log(ResultadoMaxMinAVG);
+            break
+        }
+    }
+}
+MaxMinAVG();
+console.log("Hasta aqui es el ejercicio anterior")
+
+//Intercambia Valores: Escribe una función que intercambie el primer y el último valor de cualquier array. La extensión mínima predeterminada del array es 2 (ej: [1,5,10,-2] será [-2,5,10,1]). 
+
+let ValoresCambio =  [1,5,10,-2];
+let ValoresCambios = [];
+function F_ValoresCambio(){
+    ValoresCambios.splice(0, 1, ValoresCambio[3]);
+    ValoresCambios.splice(1,0,ValoresCambio[1]);
+    ValoresCambios.splice(2,0,ValoresCambio[2]);
+    ValoresCambios.splice(3, 1, ValoresCambio[0]);
+    console.log(ValoresCambios);
+}
+F_ValoresCambio();
+
+
+//De Número a String: Escribe una función que tome un array de números y reemplace cualquier valor negativo por el string ‘Dojo’. Por ejemplo, dado el array = [-1,-3,2], tu función devolverá [‘Dojo’,‘Dojo’,2].
+
+let NumeroArr = [-1,-3,2];
+function NumeroAStrings(){
+    NumeroArr.splice(0, 1, "Dojo");
+    NumeroArr.splice(1, 1, "Dojo");
+    console.log(NumeroArr);
+}
+NumeroAStrings();
