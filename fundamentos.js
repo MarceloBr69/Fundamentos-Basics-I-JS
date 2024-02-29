@@ -115,18 +115,18 @@ console.log("Hasta aqui es el ejercicio anterior")
 
 //Cuadrados: Dado un array con múltiples valores, escribe una función que reemplace cada valor por el cuadrado del mismo valor (ej: [1,5,10,-2] será [1,25,100,4]).
 
-
-
-
-
-//function EcuacionCuadratica(ArrayAlCuadrado){
-    //for(let i = 0; i<ArrayAlCuadrado.length; i++){
-      //  calculo = ArrayAlCuadrado[i] * 2
-        //ArrayAlCuadrado.push(calculo);
-   // }
-//}
-//console.log(EcuacionCuadratica([1,5,10,-2]));
-
+let ArrayAlCuadrado = [1,5,10,-2];
+let ArrayResultadoCuadrado = [];
+function EcuacionCuadratica(ArrayAlCuadrado){
+    for(let i = 0; i<ArrayAlCuadrado.length; i++){
+        calculo = ArrayAlCuadrado[i] * ArrayAlCuadrado[i] 
+        ArrayResultadoCuadrado.push(calculo);
+        
+    }
+    console.log(ArrayResultadoCuadrado);
+    return ArrayResultadoCuadrado;
+}
+EcuacionCuadratica(ArrayAlCuadrado);
 
 
 //Negativos: Dado un array con múltiples valores, escribe una función que reemplace cualquier número negativo dentro del array por 0. Cuando el programa esté listo, el array no debiera contener números negativos (ej: [1,5,10,-2] se convertirá en [1,5,10,0]).
